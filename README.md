@@ -1,4 +1,4 @@
-# babel-plugin-dev-expression [![npm version](https://badge.fury.io/js/babel-plugin-web-dev-expression.svg)](https://badge.fury.io/js/babel-plugin-web-dev-expression)
+# babel-plugin-web-dev-expression [![npm version](https://badge.fury.io/js/babel-plugin-web-dev-expression.svg)](https://badge.fury.io/js/babel-plugin-web-dev-expression)
 
 A browser compatible fork of Facebook's dev-expression Babel plugin.
 
