@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-dev-expression",
+  "name": "babel-plugin-web-dev-expression",
   "version": "0.2.2",
   "description": "A browser compatible fork of Facebook's dev-expression Babel plugin",
   "files": [
