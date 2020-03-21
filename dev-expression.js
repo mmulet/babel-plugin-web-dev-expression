@@ -11,20 +11,38 @@ module.exports = function(babel) {
   var t = babel.types;
 
   var SEEN_SYMBOL = Symbol();
-
-  var DEV_EXPRESSION = t.binaryExpression(
-    '!==',
-    t.memberExpression(
-      t.memberExpression(
-        t.identifier('process'),
-        t.identifier('env'),
-        false
+  
+  var DEV_EXPRESSION = 
+    t.conditionalExpression(
+      t.binaryExpression(
+        "!=",
+        t.unaryExpression("typeof", t.identifier("process"), true),
+        t.stringLiteral("object")
       ),
-      t.identifier('NODE_ENV'),
-      false
-    ),
-    t.stringLiteral('production')
-  );
+      t.booleanLiteral(false),
+      t.conditionalExpression(
+        t.unaryExpression(
+          "!",
+          t.memberExpression(t.identifier("process"), t.identifier("env"), false),
+          true
+        ),
+        t.booleanLiteral(false),
+        t.binaryExpression(
+          "!==",
+          t.memberExpression(
+            t.memberExpression(
+              t.identifier("process"),
+              t.identifier("env"),
+              false
+            ),
+            t.identifier("NODE_ENV"),
+            false
+          ),
+          t.stringLiteral("production")
+        )
+      )
+    );
+  
 
   return {
     visitor: {
@@ -62,7 +80,7 @@ module.exports = function(babel) {
             // into this:
             //
             // if (!condition) {
-            //   if ("production" !== process.env.NODE_ENV) {
+            //   if (typeof process != "object" ? false : !process.env ? false : process.env.NODE_ENV !== "production") {
             //     invariant(false, argument, argument);
             //   } else {
             //     invariant(false);
@@ -107,7 +125,7 @@ module.exports = function(babel) {
             //
             // into this:
             //
-            // if ("production" !== process.env.NODE_ENV) {
+            // if (typeof process != "object" ? false : !process.env ? false : process.env.NODE_ENV !== "production") {
             //   warning(condition, argument, argument);
             // }
             //

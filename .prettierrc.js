@@ -1,12 +1,12 @@
 // Copyright 2004-present Facebook. All Rights Reserved.
 
-'use strict';
+"use strict";
 
 module.exports = {
   singleQuote: true,
-  trailingComma: 'all',
+  trailingComma: "all",
   bracketSpacing: false,
   jsxBracketSameLine: true,
-  parser: 'flow',
-  requirePragma: true,
+  parser: "flow",
+  requirePragma: true
 };
