@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-dev-expression",
   "version": "0.2.2",
-  "description": "A mirror of Facebook's dev-expression Babel plugin",
+  "description": "A browser compatible fork of Facebook's dev-expression Babel plugin",
   "files": [
     "*.js"
   ],
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/4Catalyzer/babel-plugin-dev-expression.git"
+    "url": "git+https://github.com/mmulet/babel-plugin-web-dev-expression.git"
   },
   "keywords": [
     "facebook",
@@ -22,9 +22,9 @@
   "author": "Jimmy Jia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/4Catalyzer/babel-plugin-dev-expression/issues"
+    "url": "https://github.com/mmulet/babel-plugin-web-dev-expression/issues"
   },
-  "homepage": "https://github.com/4Catalyzer/babel-plugin-dev-expression#readme",
+  "homepage": "https://github.com/mmulet/babel-plugin-web-dev-expression#readme",
   "peerDependencies": {
     "@babel/core": "^7.0.0"
   },

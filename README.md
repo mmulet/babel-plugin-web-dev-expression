@@ -1,6 +1,6 @@
-# babel-plugin-dev-expression [![npm version](https://badge.fury.io/js/babel-plugin-dev-expression.svg)](https://badge.fury.io/js/babel-plugin-dev-expression)
+# babel-plugin-dev-expression [![npm version](https://badge.fury.io/js/babel-plugin-web-dev-expression.svg)](https://badge.fury.io/js/babel-plugin-web-dev-expression)
 
-A fork of A mirror of Facebook's dev-expression Babel plugin.
+A browser compatible fork of Facebook's dev-expression Babel plugin.
 
 This plugin reduces or eliminates development checks from production code, but also works in a browser environment.
 It defaults to a production environment in a browser.
