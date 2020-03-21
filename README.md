@@ -54,7 +54,7 @@ warning(condition, argument, argument);
 with
 
 ```js
-if ("production" !== process.env.NODE_ENV) {
+if (typeof process != "object" ? false : !process.env ? false : process.env.NODE_ENV !== "production") {
   warning(condition, argument, argument);
 }
 ```
